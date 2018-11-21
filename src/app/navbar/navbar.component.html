@@ -1,10 +1,57 @@
-<div class="wrapper">
-  <nav class="sidebar">
+<div class="navigation-wrapper">
+  <nav id="sidebar">
     <div class="sidebar-header">
       <h3>SWNFZN</h3>
     </div>
 
-    ul
+    <ul class="list-unstyled components">
+      <li class="active">
+        <a href="#blogSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">BLOGS</a>
+        <ul class="collapse list-unstyled" id="blogSubmenu">
+          <li>
+            <a href="#">First blog</a>
+          </li>
+          <li>
+            <a href="#">Second blog</a>
+          </li>
+          <li>
+            <a href="#">Third blog</a>
+          </li>
+        </ul>
+      </li>
 
+      <li>
+        <a href="#bookSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">BLOGS</a>
+        <ul class="collapse list-unstyled" id="bookSubmenu">
+          <li>
+            <a href="#">First book</a>
+          </li>
+          <li>
+            <a href="#">Second book</a>
+          </li>
+          <li><a href="#">Third book</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">LIBRARY</a>
+      </li>
+
+      <li>
+        <a href="#">SHOPPING LIST</a>
+      </li>
+
+    </ul>
   </nav>
+
+<div id="main-navbar">
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button type="button" id="sidebarCollapse" class="navbar-toggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</div>
+
 </div>
