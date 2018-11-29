@@ -6,9 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
   constructor() { }
-
+  logoURL:string;
+  isToggle: boolean = false;
   ngOnInit() {
+     this.logoURL = '/assets/images/logo.svg';
+  }
+  toggleSideMenu() {
+    this.isToggle = this.isToggle == true ? false : true;
   }
 }

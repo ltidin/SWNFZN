@@ -1,9 +1,47 @@
+<!-- <nav class="navbar navbar-dark bg-dark shadow p-1">
+  <div class="navbar-header">
+      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" >
+          <span class="navbar-toggler-icon"></span>
+      </button>
+    <a href="#" class="navbar-brand ml-1 visible">   
+      <img [src]="logoURL" width="30" height="30" class="d-inlline-block align-top">
+    </a>
+  </div>
+  <div class="d-flex justify-content-end align-items-center">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn"><i class="fa fa-search"></i></button>
+    </form>
+    <a class="btn btn-sm btn-outline-secondary" href="#">Join us</a>
+  </div>
+
+    
+</nav> -->
+
+<nav class="topnav">
+  <div class="toggler" [ngClass]="{'change': isToggle}" (click)="toggleSideMenu()">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
 <div class="navigation-wrapper">
-  <nav id="sidebar">
+  <nav id="sidebar" class="active">
     <div class="sidebar-header">
       <h3>SWNFZN</h3>
     </div>
-
+<!-- TODO: change mock links -->
     <ul class="list-unstyled components">
       <li class="active">
         <a href="#blogSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">BLOGS</a>
@@ -43,15 +81,9 @@
 
     </ul>
   </nav>
-
+<!-- TODO:add navbar elements -->
 <div id="main-navbar">
-  <nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-      <button type="button" id="sidebarCollapse" class="navbar-toggler">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </nav>
+  
 </div>
 
 </div>
