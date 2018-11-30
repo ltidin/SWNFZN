@@ -7,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   constructor() { }
-  logoURL:string;
-  isToggle: boolean = false;
+  logoURL: string;
+  isToggle = true;
+  isSearchBarToggle = false;
   ngOnInit() {
      this.logoURL = '/assets/images/logo.svg';
   }
   toggleSideMenu() {
-    this.isToggle = this.isToggle == true ? false : true;
+    this.isToggle = this.isToggle === true ? false : true;
   }
+
 }

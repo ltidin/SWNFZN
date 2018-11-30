@@ -1,58 +1,139 @@
-.topnav {
+.container-fluid {
     background-color: #343a40;
     overflow: hidden;
 }
 
-/* Toggler class is an animated hamburger icon */
-.toggler {
+/* nav-icon class is an animated hamburger icon */
+.nav-icon {
     float: left;
-    display: inline-block;
     cursor: pointer;
-    margin-left: 6px;
 }
 
 .bar1, .bar2, .bar3 {
-    width: 35px;
+    width: 30px;
     height: 3px;
-    background-color: #f3f3f3;
-    margin: 6px 0;
-    transition: 0.4s;
+    background-color: #9c9c9c;
+    -o-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    margin: 7px 0;
+    display: block;
+    -moz-transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.change.nav-icon {
+    margin-left: 0.3em;  
 }
 
 .change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(0px,15px);
-    transform: rotate(-45deg) translate(0px,15px);
+    -webkit-transform: rotate(-135deg) translateY(-14px);
+    transform: rotate(-135deg) translateY(-14px);
 }
 
 .change .bar2 {
-    opacity: 0;
+    transform: scale(0);
 }
 
 .change .bar3 {
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+    -webkit-transform: rotate(135deg) translateY(14px);
+    transform: rotate(135deg) translateY(14px);
 }
 
-
-.navigation-wrapper {
-    display:flex;
-    width: 100%;
-    align-items: stretch;
+/* Styling navbar items  */
+.navbar input {
+    border: none;
+    border-radius: 0;
+    background-color: #343a40;
+    border-bottom: 3px solid #54585c;
+    transition: border-bottom 0.4s ease-in-out;
+    
 }
+
+.navbar input:focus {
+    box-shadow: none;
+    border-bottom: 3px solid #9c9c9c;
+}
+
+.w-60 {
+    width: 60% !important;
+  }
+
+  a.navbar-brand {
+      transition: color .3s ease-in-out;
+  }
+
+  a.navbar-brand:hover {
+      color: #646668;
+  }
+
+
+
 
 #sidebar {
     min-width: 250px;
     max-width: 250px;
     margin-left: -250px;
     min-height: 100vh;
+    position: fixed;
+    background-color: #e9eaea;
+    overflow-x: hidden;
+    transition: 0.5s;
+    position: fixed;
 }
 
 #sidebar.active {
     margin-left: 0px;
 }
 
-@media screen and (max-width: 600px) {
-    input[type=search] {
-        width: 10%;
+#sidebar a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: black;
+    display: block;
+    transition: 0.3s ease-in-out;
+}
+
+
+
+
+
+
+@media screen and (max-width: 575.98px) {
+    /* Main navbar queries */
+    
+    .navbar .form-inline i {
+        display: initial;
     }
+
+    .navbar input {
+        border: none;
+        border-radius: 0;
+        background-color: #343a40;
+        transition: border-bottom 0.4s ease-in-out,
+                    width 0.7s ease-in-out;
+        background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU2Ljk2NiA1Ni45NjYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDU2Ljk2NiA1Ni45NjY7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIyNHB4Ij4KPHBhdGggZD0iTTU1LjE0Niw1MS44ODdMNDEuNTg4LDM3Ljc4NmMzLjQ4Ni00LjE0NCw1LjM5Ni05LjM1OCw1LjM5Ni0xNC43ODZjMC0xMi42ODItMTAuMzE4LTIzLTIzLTIzcy0yMywxMC4zMTgtMjMsMjMgIHMxMC4zMTgsMjMsMjMsMjNjNC43NjEsMCw5LjI5OC0xLjQzNiwxMy4xNzctNC4xNjJsMTMuNjYxLDE0LjIwOGMwLjU3MSwwLjU5MywxLjMzOSwwLjkyLDIuMTYyLDAuOTIgIGMwLjc3OSwwLDEuNTE4LTAuMjk3LDIuMDc5LTAuODM3QzU2LjI1NSw1NC45ODIsNTYuMjkzLDUzLjA4LDU1LjE0Niw1MS44ODd6IE0yMy45ODQsNmM5LjM3NCwwLDE3LDcuNjI2LDE3LDE3cy03LjYyNiwxNy0xNywxNyAgcy0xNy03LjYyNi0xNy0xN1MxNC42MSw2LDIzLjk4NCw2eiIgZmlsbD0iIzU0NTg1YyIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
+        background-repeat: no-repeat;
+        background-position: right;
+        width: 10%;
+        cursor: pointer;
+    }
+
+    .navbar input:focus {
+        border: none;
+        border-radius: 0;
+        background-color: #343a40;
+        width: 100%;
+        cursor: pointer;
+        border-bottom: 3px solid #9c9c9c;
+        background-image: none;
+    }
+
+    .navbar .navbar-header {
+        display: none;
+    }
+
   }

@@ -14,16 +14,36 @@
     </form>
     <a class="btn btn-sm btn-outline-secondary" href="#">Join us</a>
   </div>
+<div class="navbar-header">
+    <a href="#" class="navbar-brand">   
+      <img [src]="logoURL" width="30" height="30" class="d-inlline-block align-top">
+      APRN
+    </a>
+  </div>
 
     
 </nav> -->
 
-<nav class="topnav">
-  <div class="toggler" [ngClass]="{'change': isToggle}" (click)="toggleSideMenu()">
+<nav class="navbar navbar-dark bg-dark shadow-lg">
+  <div class="nav-icon" [ngClass]="{'change': isToggle}" (click)="toggleSideMenu()">
     <div class="bar1"></div>
     <div class="bar2"></div>
     <div class="bar3"></div>
   </div>
+  <div class="navbar-header">
+      <a href="#" class="navbar-brand ml-3">   
+        <img [src]="logoURL" width="30" height="30" class="d-inlline-block align-top">
+        APRN
+      </a>
+    </div>
+  <form class="form-inline w-60  ml-auto mr-2">
+      
+          <input class="form-control ml-auto mr-1" type="search" placeholder="Search...">   
+    </form>
+  
+  
+      
+      <button class="btn btn-sm btn-outline-secondary">Sign Up</button>
 </nav>
 
 
@@ -32,15 +52,11 @@
 
 
 
-
-
-
-
-<div class="navigation-wrapper">
-  <nav id="sidebar" class="active">
+<nav id="sidebar" [ngClass]="{'active': isToggle}">
     <div class="sidebar-header">
       <h3>SWNFZN</h3>
     </div>
+
 <!-- TODO: change mock links -->
     <ul class="list-unstyled components">
       <li class="active">
@@ -80,10 +96,4 @@
       </li>
 
     </ul>
-  </nav>
-<!-- TODO:add navbar elements -->
-<div id="main-navbar">
-  
-</div>
-
-</div>
+</nav>
