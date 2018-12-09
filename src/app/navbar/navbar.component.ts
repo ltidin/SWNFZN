@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,15 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  constructor() { }
+  constructor(private el: ElementRef, private renderer: Renderer2) { }
   logoURL: string;
-  isToggle = true;
+  isToggle = false;
   isSearchBarToggle = false;
   ngOnInit() {
      this.logoURL = '/assets/images/logo.svg';
   }
   toggleSideMenu() {
-    this.isToggle = this.isToggle === true ? false : true;
+    if (this.isToggle) {
+      this.renderer.removeClass(this.el.nativeElement.querySelector('#sidebar'), 'active');
+      this.isToggle = false;
+    } else  {
+        this.renderer.addClass(this.el.nativeElement.querySelector('#sidebar'), 'active');
+        this.isToggle = true;
+      }
   }
 
 }

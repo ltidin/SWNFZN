@@ -1,3 +1,8 @@
+.lalalal {
+    height: 5000px;
+    background-color: red;
+}
+
 .container-fluid {
     background-color: #343a40;
     overflow: hidden;
@@ -55,7 +60,7 @@
 
 .navbar input:focus {
     box-shadow: none;
-    border-bottom: 3px solid #9c9c9c;
+    border-bottom: 3px solid #d1d1d1;
 }
 
 .w-60 {
@@ -77,24 +82,95 @@
     min-width: 250px;
     max-width: 250px;
     margin-left: -250px;
-    min-height: 100vh;
+    height: 100%;
     position: fixed;
-    background-color: #e9eaea;
+    background-color: #f5f5f5;
     overflow-x: hidden;
+    overflow-y: scroll;
     transition: 0.5s;
-    position: fixed;
+    z-index: 1;
 }
+
+
 
 #sidebar.active {
     margin-left: 0px;
 }
 
+#sidebar .sidebar-guide {
+    display: block;
+    font-family: 'Merriweather', serif;
+    padding: 14px 0px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(173, 173, 173, 0.384);
+
+}
+
+#sidebar .sidebar-subscriptions {
+    display: block;
+    font-family: 'Merriweather', serif;
+    padding: 14px 0px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(173, 173, 173, 0.384);
+
+}
+
+
+
 #sidebar a {
     text-decoration: none;
-    font-size: 1.5em;
-    color: black;
+    font-size: 1.1em;
+    padding: 8px 24px;
+    color: #3a3a3a;
     display: block;
     transition: 0.3s ease-in-out;
+    height: 48px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+#sidebar a.active {
+    background-color: #dcdcdc;
+}
+#sidebar a:hover {
+    background-color: #f1f1f1;
+}
+#sidebar a.active:hover {
+    background-color: #bdbdbd;
+}
+
+.show-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 0.8em;
+    margin-left: 30%;
+    color: #3a3a3a;
+    letter-spacing: 1px;
+}
+
+.show-btn:hover {
+color: #141414;
+}
+
+#sidebar .sidebar-subscriptions .dropdown-list a:not(:nth-child(-n+3)) {
+    display: none;
+}
+
+
+#sidebar a i{
+    margin-right: 24px;
+    size: 7px;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5%;
 }
 
 
@@ -102,7 +178,7 @@
 
 
 
-@media screen and (max-width: 575.98px) {
+@media screen and (max-width: 768px) {
     /* Main navbar queries */
     
     .navbar .form-inline i {
@@ -128,12 +204,14 @@
         background-color: #343a40;
         width: 100%;
         cursor: pointer;
-        border-bottom: 3px solid #9c9c9c;
+        border-bottom: 3px solid #d1d1d1;
         background-image: none;
     }
 
     .navbar .navbar-header {
         display: none;
     }
+
+ 
 
   }

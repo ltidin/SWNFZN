@@ -52,48 +52,83 @@
 
 
 
-<nav id="sidebar" [ngClass]="{'active': isToggle}">
-    <div class="sidebar-header">
-      <h3>SWNFZN</h3>
+<nav id="sidebar">
+    <div class="sidebar-guide">
+      <a href="#" class="active"><i class="fa fa-fw fa-home"></i>Home</a>
+      <a href="#"><i class="fa fa-fw fa-newspaper-o"></i>Topics</a>
+      <a href="#"><i class="fa fa-fw fa-user"></i>Dashboard</a>
     </div>
 
-<!-- TODO: change mock links -->
-    <ul class="list-unstyled components">
-      <li class="active">
-        <a href="#blogSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">BLOGS</a>
-        <ul class="collapse list-unstyled" id="blogSubmenu">
-          <li>
-            <a href="#">First blog</a>
-          </li>
-          <li>
-            <a href="#">Second blog</a>
-          </li>
-          <li>
-            <a href="#">Third blog</a>
-          </li>
-        </ul>
-      </li>
+    <div class="sidebar-subscriptions">
+      <a href="#">BLOGS</a>
+      <div class="dropdown-list">
+        <a href="#"><img src="https://materiell.com/wp-content/uploads/2015/03/doug_full1.png" class="avatar">Roy&nbsp;Johnson</a>
+        <a href="#"><img src="https://previews.123rf.com/images/juliarstudio/juliarstudio1512/juliarstudio151200350/49020643-man-with-glasses-avatar-simple-icon-for-web-and-mobile-devices.jpg" class="avatar">Percy&nbsp;Keller</a>
+        <a href="#"><img src="https://ictatnhs.files.wordpress.com/2010/01/my-avatar.jpg" class="avatar">Mabel&nbsp;Webber</a>
+        <a href="#"><img src="https://media.istockphoto.com/vectors/man-portrait-face-icon-web-avatar-flat-style-vector-vector-id641304238" class="avatar">Evan&nbsp;Barrera</a>
+      </div>
+      <button class="show-btn"><i class="fa fa-fw fa-caret-down"></i>Show All</button>  
+        <!-- TODO: WRITE ATTIBUTE DIRECTIVE TO CTRL THIS BUTTON --> 
+    </div>
+    <div class="sidebar-subscriptions">
+      <a href="#">BOOKS</a>
+      <div class="dropdown-list">
+        <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/61eZLnlQmDL._AC_US218_.jpg" class="avatar">Happy&nbsp;Cookbook</a>
+        <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/51K7u3aZoDL._AC_US218_.jpg" alt="" class="avatar">Tasty&nbsp;Ultimate</a>
+        <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/51LkSIFTHlL._AC_US218_.jpg" alt="" class="avatar">The&nbsp;Complete&nbsp;Cooking&nbsp;for&nbsp;Two</a>
+        <a href="#"><img class="avatar" src="https://images-na.ssl-images-amazon.com/images/I/61wDctD4WHL._AC_US218_.jpg" alt="">Thug&nbsp;Kitchen</a>
+      </div>
+    </div>
+    <div class="sidebar-guide">
+      <a href="#"><i class="fa fa-fw fa-book"></i>LIBRARY</a>
+    </div>
+    <div class="sidebar-guide">
+        <a href="#"><i class="fa fa-fw fa-shopping-cart"></i>SHOPPING LIST</a>
+    </div>
+    
 
-      <li>
-        <a href="#bookSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">BLOGS</a>
-        <ul class="collapse list-unstyled" id="bookSubmenu">
-          <li>
-            <a href="#">First book</a>
-          </li>
-          <li>
-            <a href="#">Second book</a>
-          </li>
-          <li><a href="#">Third book</a></li>
-        </ul>
-      </li>
 
-      <li>
-        <a href="#">LIBRARY</a>
-      </li>
-
-      <li>
-        <a href="#">SHOPPING LIST</a>
-      </li>
-
-    </ul>
 </nav>
+
+
+
+
+<!-- TODO: change mock links
+<ul class="list-unstyled components">
+  <li class="active">
+    <a href="#blogSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">BLOGS</a>
+    <ul class="collapse list-unstyled" id="blogSubmenu">
+      <li>
+        <a href="#">First blog</a>
+      </li>
+      <li>
+        <a href="#">Second blog</a>
+      </li>
+      <li>
+        <a href="#">Third blog</a>
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#bookSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">BLOGS</a>
+    <ul class="collapse list-unstyled" id="bookSubmenu">
+      <li>
+        <a href="#">First book</a>
+      </li>
+      <li>
+        <a href="#">Second book</a>
+      </li>
+      <li><a href="#">Third book</a></li>
+    </ul>
+  </li>
+
+  <li>
+    <a href="#">LIBRARY</a>
+  </li>
+
+  <li>
+    <a href="#">SHOPPING LIST</a>
+  </li>
+
+</ul> -->
