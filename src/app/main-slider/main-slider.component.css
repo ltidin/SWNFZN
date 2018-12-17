@@ -1,0 +1,17 @@
+.main-carousel {
+    position: relative;
+    height: 400px;
+    top: 80%;
+    transform: translateY(-50%);
+    overflow: hidden;
+}
+
+.main-carousel div {
+    position: absolute;
+    transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+    opacity: 1;
+}
+.main-carousel div img {
+    width: 400px;
+    transition: width 1s;
+}

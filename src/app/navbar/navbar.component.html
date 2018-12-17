@@ -1,30 +1,4 @@
-<!-- <nav class="navbar navbar-dark bg-dark shadow p-1">
-  <div class="navbar-header">
-      <button class="navbar-toggler border-0" type="button" data-toggle="collapse" >
-          <span class="navbar-toggler-icon"></span>
-      </button>
-    <a href="#" class="navbar-brand ml-1 visible">   
-      <img [src]="logoURL" width="30" height="30" class="d-inlline-block align-top">
-    </a>
-  </div>
-  <div class="d-flex justify-content-end align-items-center">
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn"><i class="fa fa-search"></i></button>
-    </form>
-    <a class="btn btn-sm btn-outline-secondary" href="#">Join us</a>
-  </div>
-<div class="navbar-header">
-    <a href="#" class="navbar-brand">   
-      <img [src]="logoURL" width="30" height="30" class="d-inlline-block align-top">
-      APRN
-    </a>
-  </div>
-
-    
-</nav> -->
-
-<nav class="navbar navbar-dark bg-dark shadow-lg">
+<nav class="navbar navbar-dark bg-dark shadow-lg fixed-top">
   <div class="nav-icon" [ngClass]="{'change': isToggle}" (click)="toggleSideMenu()">
     <div class="bar1"></div>
     <div class="bar2"></div>
@@ -47,11 +21,6 @@
 </nav>
 
 
-
-
-
-
-
 <nav id="sidebar">
     <div class="sidebar-guide">
       <a href="#" class="active"><i class="fa fa-fw fa-home"></i>Home</a>
@@ -60,23 +29,22 @@
     </div>
 
     <div class="sidebar-subscriptions">
-      <a href="#">BLOGS</a>
-      <div class="dropdown-list">
+      <button class="subscr-dropdown-btn" appSubscriptionDropdown><i class="fa fa-caret-down fa-pull-right"></i>BLOGS</button>
+      <div class="dropdown-list" >
         <a href="#"><img src="https://materiell.com/wp-content/uploads/2015/03/doug_full1.png" class="avatar">Roy&nbsp;Johnson</a>
         <a href="#"><img src="https://previews.123rf.com/images/juliarstudio/juliarstudio1512/juliarstudio151200350/49020643-man-with-glasses-avatar-simple-icon-for-web-and-mobile-devices.jpg" class="avatar">Percy&nbsp;Keller</a>
         <a href="#"><img src="https://ictatnhs.files.wordpress.com/2010/01/my-avatar.jpg" class="avatar">Mabel&nbsp;Webber</a>
         <a href="#"><img src="https://media.istockphoto.com/vectors/man-portrait-face-icon-web-avatar-flat-style-vector-vector-id641304238" class="avatar">Evan&nbsp;Barrera</a>
       </div>
-      <button class="show-btn"><i class="fa fa-fw fa-caret-down"></i>Show All</button>  
-        <!-- TODO: WRITE ATTIBUTE DIRECTIVE TO CTRL THIS BUTTON --> 
     </div>
     <div class="sidebar-subscriptions">
-      <a href="#">BOOKS</a>
+      <button class="subscr-dropdown-btn" appSubscriptionDropdown><i class="fa fa-caret-down fa-pull-right"></i>BOOKS</button>
       <div class="dropdown-list">
         <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/61eZLnlQmDL._AC_US218_.jpg" class="avatar">Happy&nbsp;Cookbook</a>
         <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/51K7u3aZoDL._AC_US218_.jpg" alt="" class="avatar">Tasty&nbsp;Ultimate</a>
         <a href="#"><img src="https://images-na.ssl-images-amazon.com/images/I/51LkSIFTHlL._AC_US218_.jpg" alt="" class="avatar">The&nbsp;Complete&nbsp;Cooking&nbsp;for&nbsp;Two</a>
         <a href="#"><img class="avatar" src="https://images-na.ssl-images-amazon.com/images/I/61wDctD4WHL._AC_US218_.jpg" alt="">Thug&nbsp;Kitchen</a>
+         
       </div>
     </div>
     <div class="sidebar-guide">
@@ -85,50 +53,5 @@
     <div class="sidebar-guide">
         <a href="#"><i class="fa fa-fw fa-shopping-cart"></i>SHOPPING LIST</a>
     </div>
-    
-
 
 </nav>
-
-
-
-
-<!-- TODO: change mock links
-<ul class="list-unstyled components">
-  <li class="active">
-    <a href="#blogSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">BLOGS</a>
-    <ul class="collapse list-unstyled" id="blogSubmenu">
-      <li>
-        <a href="#">First blog</a>
-      </li>
-      <li>
-        <a href="#">Second blog</a>
-      </li>
-      <li>
-        <a href="#">Third blog</a>
-      </li>
-    </ul>
-  </li>
-
-  <li>
-    <a href="#bookSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">BLOGS</a>
-    <ul class="collapse list-unstyled" id="bookSubmenu">
-      <li>
-        <a href="#">First book</a>
-      </li>
-      <li>
-        <a href="#">Second book</a>
-      </li>
-      <li><a href="#">Third book</a></li>
-    </ul>
-  </li>
-
-  <li>
-    <a href="#">LIBRARY</a>
-  </li>
-
-  <li>
-    <a href="#">SHOPPING LIST</a>
-  </li>
-
-</ul> -->
