@@ -1,0 +1,71 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+        <mat-nav-list>
+            <a mat-list-item href="#" (click)="sidenav.close()"><mat-icon>home</mat-icon>Home</a>
+            <a mat-list-item href="#" (click)="sidenav.close()"><mat-icon>book</mat-icon>Topics</a>
+            <a mat-list-item href="#" (click)="sidenav.close()"><mat-icon>dashboard</mat-icon>Dashboard</a>
+        </mat-nav-list>
+        <mat-divider></mat-divider>
+        <mat-nav-list>  <!-- Subscription's part -->
+            <mat-list-item *ngFor="let blog of blogs" (click)="sidenav.close()">
+                <a href="#" >
+                    <img matListAvatar src="{{blog.image}}" alt="">
+                    {{blog.name}}
+                </a>    
+            </mat-list-item>
+        </mat-nav-list>
+        <mat-divider></mat-divider>
+        <!-- BOOK'S part -->
+        <mat-nav-list>
+            <mat-list-item *ngFor="let book of books" (click)="sidenav.close()">
+                <a href="#" >
+                    <img matListAvatar src="{{book.image}}" alt="">
+                    {{book.title}}
+                </a>  
+            </mat-list-item> 
+        </mat-nav-list>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <ng-container *ngIf="!searchToggle; then toolbar; else searchBar">
+        </ng-container>
+        
+        <ng-template #toolbar>
+                <mat-toolbar color="accent" role="heading">
+                        <div>
+                            <button mat-icon-button (click)="sidenav.toggle()">
+                                <mat-icon>menu</mat-icon>
+                            </button>
+                        </div>
+                        <div>LOGO</div>
+                        <div fxFlex fxLayout="row" fxLayoutAlign="end">
+                            <button mat-icon-button (click)="onToggleSearch()">
+                                <mat-icon>search</mat-icon>
+                            </button>
+                            <button mat-button>Get Started</button>
+                        </div>
+                            
+                    </mat-toolbar>
+        </ng-template>
+
+        <ng-template #searchBar>
+            <mat-toolbar color="accent" fxLayout="row">
+                <div>
+                    <button mat-icon-button (click)="onToggleSearch()">
+                        <mat-icon>arrow_back</mat-icon>
+                    </button>
+                </div>
+                <form fxFlex fxLayout="row">
+                        <mat-form-field fxFlex>
+                            <input matInput type="search"  appAutofocus (blur)="onToggleSearch()">
+                        </mat-form-field>
+                </form>
+            </mat-toolbar>
+        </ng-template>
+
+        <main>
+            <ng-content></ng-content>
+        </main>
+    </mat-sidenav-content>
+    
+</mat-sidenav-container>
