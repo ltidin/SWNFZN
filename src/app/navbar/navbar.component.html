@@ -1,29 +1,51 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav role="navigation">
+        <div class="logo">
+            <a href="#">
+                <img src="assets/images/apron.svg" alt="">
+                <div>Aprony</div>
+            </a>    
+        </div>
+        <mat-divider></mat-divider>
         <mat-nav-list>
-            <a mat-list-item href="#" (click)="sidenav.close()"><mat-icon>home</mat-icon>Home</a>
-            <a mat-list-item href="#" (click)="sidenav.close()"><mat-icon>book</mat-icon>Topics</a>
-            <a mat-list-item href="#" (click)="sidenav.close()"><mat-icon>dashboard</mat-icon>Dashboard</a>
+            <a mat-list-item href="#"><mat-icon>home</mat-icon>Home</a>
+            <a mat-list-item href="#"><mat-icon>book</mat-icon>Topics</a>
+            <a mat-list-item href="#"><mat-icon>dashboard</mat-icon>Dashboard</a>
+            <a mat-list-item href="#"><mat-icon>local_library</mat-icon>Library</a>
+            <a mat-list-item href="#"><mat-icon>shopping_cart</mat-icon>Shopping list</a>
         </mat-nav-list>
         <mat-divider></mat-divider>
-        <mat-nav-list>  <!-- Subscription's part -->
-            <mat-list-item *ngFor="let blog of blogs" (click)="sidenav.close()">
-                <a href="#" >
-                    <img matListAvatar src="{{blog.image}}" alt="">
-                    {{blog.name}}
-                </a>    
-            </mat-list-item>
-        </mat-nav-list>
-        <mat-divider></mat-divider>
+        <div class="subscription-container">
+            <mat-nav-list>  <!-- Subscription's part -->
+                <h3 mat-subheader>BLOGS</h3>
+                <mat-list-item *ngFor="let blog of blogs">
+                    <a href="#" >
+                        <img matListAvatar src="{{blog.image}}" alt="">
+                        {{blog.name}}
+                    </a>    
+                </mat-list-item>
+            </mat-nav-list>
+            <button mat-button appSubscriptionDropdown>Show more<mat-icon>arrow_drop_down</mat-icon></button>
+            <mat-divider></mat-divider>
+        </div>
         <!-- BOOK'S part -->
-        <mat-nav-list>
-            <mat-list-item *ngFor="let book of books" (click)="sidenav.close()">
-                <a href="#" >
-                    <img matListAvatar src="{{book.image}}" alt="">
-                    {{book.title}}
-                </a>  
-            </mat-list-item> 
-        </mat-nav-list>
+        <div class="subscription-container">
+            <mat-nav-list>
+            <h3 mat-subheader>BOOKS</h3>
+                <mat-list-item *ngFor="let book of books">
+                    <a href="#" >
+                        <img matListAvatar src="{{book.image}}" alt="">
+                        {{book.title}}
+                    </a>  
+                </mat-list-item> 
+            </mat-nav-list>
+            <button mat-button appSubscriptionDropdown>Show more<mat-icon>arrow_drop_down</mat-icon></button>
+            <mat-divider></mat-divider>
+        </div>
+                    
+       
+        
+        
 
     </mat-sidenav>
     <mat-sidenav-content>
@@ -33,16 +55,44 @@
         <ng-template #toolbar>
                 <mat-toolbar color="accent" role="heading">
                         <div>
-                            <button mat-icon-button (click)="sidenav.toggle()">
+                            <button mat-icon-button (click)="onSideMenuToggle()">
                                 <mat-icon>menu</mat-icon>
                             </button>
                         </div>
-                        <div>LOGO</div>
+                        <img id="header-logo" src="assets/images/apron.svg" alt="">
                         <div fxFlex fxLayout="row" fxLayoutAlign="end">
                             <button mat-icon-button (click)="onToggleSearch()">
                                 <mat-icon>search</mat-icon>
                             </button>
-                            <button mat-button>Get Started</button>
+                            <button *ngIf="!isLogged" mat-button (click)="logIn()">Get Started</button>
+                            <div *ngIf="isLogged">
+                                <button mat-icon-button>
+                                    <mat-icon [matBadge]="notifCounter">notifications</mat-icon>
+                                </button>
+                                <button mat-icon-button>
+                                    <mat-icon [matMenuTriggerFor]="menu">account_circle</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu">
+                                    <mat-card>
+                                        <mat-card-header>
+                                            <img mat-card-avatar src="https://kommynist.ru/images/thumb/e/eb/%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0.jpg/280px-%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%9B%D0%B5%D0%BD%D0%B8%D0%BD%D0%B0.jpg" alt="">
+                                            <mat-card-title>Vladimir Lenin</mat-card-title>
+                                            <mat-card-subtitle>lenin@gmail.com</mat-card-subtitle>
+                                        </mat-card-header>
+                                        <mat-card-content>
+                                        
+                                        </mat-card-content>
+                                    </mat-card>
+                                    <button mat-menu-item>
+                                        <mat-icon>settings</mat-icon>
+                                        <span>Settings</span>
+                                    </button>
+                                    <button mat-menu-item (click)="logOut()">
+                                        <mat-icon>eject</mat-icon>
+                                        <span>Log out</span>
+                                    </button>
+                                </mat-menu>
+                            </div>   
                         </div>
                             
                     </mat-toolbar>

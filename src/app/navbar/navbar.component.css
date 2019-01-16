@@ -21,4 +21,46 @@ button {
 mat-icon {
     margin-right: 5%;
 }
+mat-list-item{
+    white-space: nowrap ;
+    overflow: hidden ;
+}
+.subscription-container > button {
+    width: 100%;
+    text-align: center;
+    font-size: 100%;
+    font-weight: 300;
+    font-size: 90%;
+    opacity: 0.5;
+}
+.subscription-container > mat-nav-list mat-list-item:not(:nth-child(-n+4)) {
+    display: none;
+}
 
+.logo {
+    margin: 6% 6%;
+    font-size: 130%;
+}
+
+.logo img {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin-right: 10px; 
+}
+
+#header-logo {
+    width: 40px;
+    height: 40px;
+    margin-left: 1%; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#user-avatar {
+    width: 40px;
+    height: 40px;
+}

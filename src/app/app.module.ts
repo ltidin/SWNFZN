@@ -6,15 +6,17 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatIconModule, MatSidenavModule,
-   MatToolbarModule, MatFormFieldModule, MatInputModule, MatListModule } from '@angular/material';
+   MatToolbarModule, MatFormFieldModule, MatInputModule, MatListModule, MatMenuModule, MatBadgeModule, MatCardModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AutofocusDirective } from './autofocus/autofocus.directive';
+import { SubscriptionDropdownDirective } from './shared/subscription-dropdown.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    AutofocusDirective
+    AutofocusDirective,
+    SubscriptionDropdownDirective
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,9 @@ import { AutofocusDirective } from './autofocus/autofocus.directive';
     MatInputModule,
     MatListModule,
     FlexLayoutModule,
+    MatMenuModule,
+    MatBadgeModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
